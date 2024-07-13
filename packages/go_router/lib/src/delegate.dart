@@ -57,7 +57,8 @@ class GoRouterDelegate extends RouterDelegate<RouteMatchList>
       return false;
     }
     if (!state.canPop()) {
-      state = null;
+      /// Commenting out the line below is a hotfix as described here https://github.com/flutter/flutter/issues/140869#issuecomment-2225669372
+      // state = null;
     }
     RouteMatchBase walker = currentConfiguration.matches.last;
     while (walker is ShellRouteMatch) {
